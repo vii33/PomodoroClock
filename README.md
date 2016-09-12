@@ -18,6 +18,7 @@ And I don’t like software where I have to do more clicks then absolute necessa
 * It has to run on a Windows PC, preferably without installing strange frameworks. 
 ## Result 
 I searched on the internet for some while but didn’t find anything which suited me and my requirements. And so I wrote a simple C# Application for me. Perhaps it helps some out there with similar problems. 
+
 ## Software-Features
 * One Click Start. After 25 Minutes have passed another click starts the Break. 
 * App is highly (geometric) scaleable and can be “parked” in free screen areas
