@@ -4,9 +4,12 @@ A simple and nice scaleable timer application, which counts in 25 minutes interv
 -----
 
 I really like the Pomodoro Technique (http://pomodorotechnique.com/). It’s a simple time management method which helps you getting things done (GTD), stay focused and be more productive. For this you need a timer which counts 25 Minutes of Work and 5 Minutes of Breaks.
+
 https://en.wikipedia.org/wiki/Pomodoro_Technique
+
 I like to use a Pomodoro Timer when doing focused work on my computer.
 And I don’t like software where I have to do more clicks then absolute necessary (i.e. Power User). Therefore I had some requirements for a Timer Software:
+
 ## Personal Timer Requirements
 * Since I’m managing my Pomodoros via good old fashioned pen & paper, I don’t want to be urged to specifiy tasks in the timer application. I just want to start and stop it.
 * I want to have a clear visual feedback how much time I have still left. So in addi-tion to a digital clock a more visual way (e.g. color, graph) would be nice.
