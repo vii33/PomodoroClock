@@ -16,6 +16,7 @@ And I don’t like software where I have to do more clicks then absolute necessa
 * The timer needs always to stay in my sight. Otherwise I wouldn’t get into the Eustress (Positive Stressor) phase as good. Therefore it has to stay on top of oth-er applications.
 * Since the timer always stays on top, it has to be small in it’s dimensions.
 * It has to run on a Windows PC, preferably without installing strange frameworks. 
+
 ## Result 
 I searched on the internet for some while but didn’t find anything which suited me and my requirements. And so I wrote a simple C# Application for me. Perhaps it helps some out there with similar problems. 
 
