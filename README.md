@@ -3,6 +3,7 @@ A simple and scaleable desktop timer, which counts 25 minutes intervals. Useful 
 
 -----
 
+## Introduction
 I really like the Pomodoro Technique (http://pomodorotechnique.com/). 
 It’s a simple time management method which helps you getting things done (GTD), stay focused and be more productive. 
 
@@ -35,3 +36,6 @@ And so I wrote a simple C# application. I make this project public, perhaps the 
 Software doesn’t play a ringing sound after the Pomodoro / Break. I find this disturbing in an office environment.   
 
 *If the software helps you or you have some questions, feel free to contact me.*
+
+## Acknowledgement
+Tomato Icon made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
