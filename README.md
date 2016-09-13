@@ -1,32 +1,37 @@
 # PomodoroClock
-A simple and nice scaleable timer application, which counts in 25 minutes intervals. Usefull for "Pomodoro" time management.
+A simple and scaleable desktop timer, which counts 25 minutes intervals. Useful for "Pomodoro" time management.
 
 -----
 
-I really like the Pomodoro Technique (http://pomodorotechnique.com/). It’s a simple time management method which helps you getting things done (GTD), stay focused and be more productive. For this you need a timer which counts 25 Minutes of Work and 5 Minutes of Breaks.
+I really like the Pomodoro Technique (http://pomodorotechnique.com/). 
+It’s a simple time management method which helps you getting things done (GTD), stay focused and be more productive. 
 
 https://en.wikipedia.org/wiki/Pomodoro_Technique
 
-I like to use a Pomodoro Timer when doing focused work on my computer.
-And I don’t like software where I have to do more clicks then absolute necessary (i.e. Power User). Therefore I had some requirements for a Timer Software:
+For this method you need a timer which counts 25 minutes of work and 5 minutes of breaks.
+I want to use a Pomodoro Timer while doing work on my computer. And I'm also kind of a Power User who tweaks every software to achieve a maximum work-flow output. 
+Therefore I had some requirements for a Timer Software:
 
 ## Personal Timer Requirements
-* Since I’m managing my Pomodoros via good old fashioned pen & paper, I don’t want to be urged to specifiy tasks in the timer application. I just want to start and stop it.
-* I want to have a clear visual feedback how much time I have still left. So in addi-tion to a digital clock a more visual way (e.g. color, graph) would be nice.
-* The timer needs always to stay in my sight. Otherwise I wouldn’t get into the Eustress (Positive Stressor) phase as good. Therefore it has to stay on top of oth-er applications.
-* Since the timer always stays on top, it has to be small in it’s dimensions.
+* Since I’m managing my Pomodoros via good old fashioned pen & paper, I don’t want to be urged to specify tasks in the timer application. I just want to start and stop it.
+* I want to have a clear visual feedback of how much time I have still left. So in addition to a digital clock a more visual way (e.g. color) would be nice.
+* The timer needs always to stay in my sight. Otherwise I wouldn’t get into the Eustress (Positive Stressor) phase as good. Therefore it has to stay on top of other applications.
+* Since the timer always stays on top, it has to be small in it’s dimensions, moveable and scaleable.
 * It has to run on a Windows PC, preferably without installing strange frameworks. 
 
 ## Result 
-I searched on the internet for some while but didn’t find anything which suited me and my requirements. And so I wrote a simple C# Application for me. Perhaps it helps some out there with similar problems. 
+I searched on the internet for some while and tried different desktop and web-based timers, but I didn’t find anything which suited my requirements. 
+And so I wrote a simple C# application. I make this project public, perhaps the software can help some with similar problems. 
 
 ## Software-Features
-* One Click Start. After 25 Minutes have passed another click starts the Break. 
-* App is highly (geometric) scaleable and can be “parked” in free screen areas
+* One Click Start. After 25 minutes have passed, another click starts the break. 
+* App is highly (geometric) scalable and can be “parked” in free areas anywhere on the screen.
 * Visual Feedback with color changing time bar
 * Stays always on top of other applications
-* Remembers Window Position and Size upon next start.
+* Remembers window position and size upon next start.
 * Built with .Net 4.5
 
 ## Remarks
 Software doesn’t play a ringing sound after the Pomodoro / Break. I find this disturbing in an office environment.   
+
+*If the software helps you or you have some questions, feel free to contact me.*
