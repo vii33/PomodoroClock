@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Shell;
 using System.Windows.Threading;
 using PomodoroClock.Annotations;
 
@@ -64,11 +53,12 @@ namespace PomodoroClock
         public DateTime StartTime { get; set; }
         
         DispatcherTimer _timer = new DispatcherTimer();
-  
+        private MediaPlayer _mediaPlayer = new MediaPlayer();
+
+
         private bool _animationPomodoro;
         private bool _animationBreak;
         private bool _breakTime;
-        private double BarMinWidth = 10;
         private readonly TimeSpan _timerIntervall = TimeSpan.FromMilliseconds(200);
 
         public MainWindow()
@@ -81,14 +71,13 @@ namespace PomodoroClock
             InitializeComponent();
             this.DataContext = this;
 
-            lblMainBar.MinWidth = BarMinWidth;
+            LblMainBar.MinWidth = CalculateMainBarMinWidth();
             _timer.Tick += timer_Tick;
             _timer.Interval = _timerIntervall;
             Panele.MouseLeftButtonDown += (s, e) => DragMove();
-           
 
             //Initialize
-            lblMainBar.Width = this.Width - lblMainBar.Margin.Left - lblMainBar.Margin.Right - 20;
+            LblMainBar.Width = this.Width - LblMainBar.Margin.Left - LblMainBar.Margin.Right - 20;
             PomodoroTimeSpan = TimeSpan.FromMinutes(25);
             BreakTimeSpan = TimeSpan.FromMinutes(5);
         }
@@ -96,52 +85,82 @@ namespace PomodoroClock
         void timer_Tick(object sender, EventArgs e)
         {
             TimeSpan remTimeSpan = EndTime - DateTime.Now;
+            TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Normal;
 
             if (_breakTime == false)
             {
-                //Farbanimation einschalten
                 AnimationPomodoro = true;
 
-                ZeichneBalken(remTimeSpan, PomodoroTimeSpan);
-
-                if (remTimeSpan.TotalSeconds <= 0)
-                {
-                    _timer.IsEnabled = false;
-                    _breakTime = true;
-                    AnimationPomodoro = false;
-                }
+                DrawMainBar(remTimeSpan, new TimeSpan(EndTime.Ticks - StartTime.Ticks));
+                TaskbarItemInfo.ProgressValue = CalculateProgressPercentage(remTimeSpan, new TimeSpan(EndTime.Ticks - StartTime.Ticks));
             }
-            else  //Zeit war vorbei --> Pausenzeit
+            else  // Break Time
             {
-                //Neue Farbanimation einschalten
                 AnimationBreak = true;
 
-
+                // Bar has to count upwarts
                 TimeSpan tmp = DateTime.Now - StartTime;
-                ZeichneBalken(tmp, BreakTimeSpan);
+                DrawMainBar(tmp, new TimeSpan(EndTime.Ticks - StartTime.Ticks));
+                TaskbarItemInfo.ProgressValue = CalculateProgressPercentage(tmp, new TimeSpan(EndTime.Ticks - StartTime.Ticks));
+            }
 
-                if (remTimeSpan.TotalSeconds <= 0)
-                {
-                    _timer.IsEnabled = false;
-                    _breakTime = false;
-                    AnimationBreak = false;
-                }
+            // Timer has finished
+            if (remTimeSpan.TotalSeconds <= 0)
+            {
+                _timer.IsEnabled = false;
+ 
+                AnimationBreak = false;
+                AnimationPomodoro = false;
+
+                _breakTime = _breakTime != true;  // Toggle breaktime
+
+                TaskbarItemInfo.ProgressState = TaskbarItemProgressState.None;
+
+                //_mediaPlayer.Open();
+                //_mediaPlayer.Play();
+
             }
 
             remTimeSpan += TimeSpan.FromSeconds(1);
-            tbTime.Text = remTimeSpan.ToString(@"mm\:ss");
+            TbTime.Text = remTimeSpan.ToString(@"mm\:ss");
 
         }
 
-        private void ZeichneBalken(TimeSpan remTimeSpan, TimeSpan maxTimeSpan)
+        private void DrawMainBar(TimeSpan remTimeSpan, TimeSpan maxTimeSpan)
         {
-            var maxFlexBarWidth = Panele.ActualWidth - lblMainBar.Margin.Left - lblMainBar.Margin.Right - BarMinWidth - 10;  //10 ist der offset, unten auch 
-            var percentage = remTimeSpan.TotalSeconds / maxTimeSpan.TotalSeconds;
+            var maxFlexBarWidth = Panele.ActualWidth - LblMainBar.Margin.Left - LblMainBar.Margin.Right - CalculateMainBarMinWidth() - 10;  //10 ist der offset, unten auch 
+            double percentage = CalculateProgressPercentage(remTimeSpan, maxTimeSpan);
+            LblMainBar.Width = CalculateMainBarMinWidth() + 10 + (maxFlexBarWidth * percentage);
+        }
 
-            if (percentage > 0 && percentage <= 1)
+        private static double CalculateProgressPercentage(TimeSpan remainingTimeSpan, TimeSpan maxTimeSpan)
+        {
+            var percentage = remainingTimeSpan.TotalSeconds / maxTimeSpan.TotalSeconds;
+
+            if (percentage < 0)
             {
-                lblMainBar.Width = BarMinWidth + 10 + (maxFlexBarWidth * percentage);
+                percentage = 0;
             }
+            else if (percentage > 1)
+            {
+                percentage = 1;
+            }
+
+            return percentage;
+        }
+
+        private void LblMainBar_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StartTime = DateTime.Now;
+            EndTime = DateTime.Now.Add(_breakTime == false ? PomodoroTimeSpan : BreakTimeSpan);  // When we ware not on a break then start a PomodoroTimeSpan, otherwise a BreakTimeSpan
+
+            // Possibility to skip breaks
+            if (AnimationBreak == true)
+            {
+                EndTime = DateTime.Now;  // Fast forward
+            }
+
+            _timer.Start();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -155,26 +174,15 @@ namespace PomodoroClock
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            ZeichneBalken(PomodoroTimeSpan, PomodoroTimeSpan);
-            BarMinWidth = vBTime.ActualWidth;
+            DrawMainBar(PomodoroTimeSpan, PomodoroTimeSpan);
         }
 
-
-        private void LblMainBar_OnMouseDown(object sender, MouseButtonEventArgs e)
+        private double CalculateMainBarMinWidth()
         {
-            if (_breakTime == false)
-            {
-                EndTime = DateTime.Now.Add(PomodoroTimeSpan);
-                StartTime = DateTime.Now;
-            }
-            else
-            {
-                EndTime = DateTime.Now.Add(BreakTimeSpan);
-                StartTime = DateTime.Now;
-            }
-
-            _timer.Start();
+            return  VbTime.ActualWidth + VbTime.Margin.Left + VbTime.Margin.Right;
         }
+
+
         private void Window_Activated(object sender, EventArgs e)
         {
             this.Topmost = true;  //http://stackoverflow.com/questions/20050426/wpf-always-on-top
