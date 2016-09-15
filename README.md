@@ -30,10 +30,11 @@ And so I wrote a simple C# application. I make this project public, perhaps the 
 * Visual Feedback with color changing time bar
 * Stays always on top of other applications
 * Remembers window position and size upon next start.
+* Also shows progression in task bar
 * Built with .Net 4.5
 
 ## Remarks
-Software doesn’t play a ringing sound after the Pomodoro / Break. I find this disturbing in an office environment.   
+Software doesn’t play a ringing sound after the Pomodoro / Break. Perhaps I'll add this feature later.  
 
 *If the software helps you or you have some questions, feel free to contact me.*
 
