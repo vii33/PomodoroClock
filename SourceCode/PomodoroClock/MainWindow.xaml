@@ -46,7 +46,7 @@
                                     <StopStoryboard BeginStoryboardName="AniBreak"/>
                                     <BeginStoryboard x:Name="AniPomodoro">
                                         <Storyboard TargetProperty="(Label.Background).(SolidColorBrush.Color)">
-                                            <ColorAnimation BeginTime="0:0:0" To="Gold" Duration="0:13:0" ></ColorAnimation>
+                                            <ColorAnimation BeginTime="0:0:0" To="Gold" Duration="0:13:00" ></ColorAnimation>
                                             <ColorAnimation BeginTime="0:13:0" To="DarkRed" Duration="0:12:0" ></ColorAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
@@ -72,6 +72,16 @@
                                     <StopStoryboard BeginStoryboardName="AniBreak"/>
                                 </MultiDataTrigger.ExitActions>
                             </MultiDataTrigger>
+                            <MultiDataTrigger> <!-- For resetting the animations -->
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding Path=AnimationBreak}" Value="False"></Condition>
+                                    <Condition Binding="{Binding Path=AnimationPomodoro}" Value="False"></Condition>
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.EnterActions>
+                                    <StopStoryboard BeginStoryboardName="AniPomodoro"/>
+                                    <StopStoryboard BeginStoryboardName="AniBreak"/>
+                                </MultiDataTrigger.EnterActions>
+                            </MultiDataTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -80,66 +90,66 @@
 
     </Window.Resources>
 
+    <Border BorderThickness="1" BorderBrush="#FF006797" >
+        <Grid x:Name="Panele" MouseRightButtonDown="Panele_MouseRightButtonDown">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16px" MinHeight="16px"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
 
-    <Grid x:Name="Panele" MouseRightButtonDown="Panele_MouseRightButtonDown">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="16px" MinHeight="16px"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
+            <Label x:Name="LblMainBar" 
+                           Style="{StaticResource MyBar}"
+                           Width="400"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Left"
+                           VerticalContentAlignment="Center"
+                           MouseDown="LblMainBar_OnMouseDown"
+                           Margin="10,2,10,10"
+                           Grid.Column="0" Grid.Row="1"
+                           Grid.ColumnSpan="2"
+                           />
+            <StackPanel x:Name="StpMainBarControls"
+                Grid.Column="0" Grid.Row="1" 
+                Grid.ColumnSpan="2" 
+                Orientation="Horizontal"
+                Margin="{Binding ElementName=LblMainBar, Path=Margin}">
 
-        <Label x:Name="LblMainBar" 
-                       Style="{StaticResource MyBar}"
-                       Width="400"
-                       VerticalAlignment="Stretch"
-                       HorizontalAlignment="Left"
-                       VerticalContentAlignment="Center"
-                       MouseDown="LblMainBar_OnMouseDown"
-                       Margin="10,2,10,10"
-                       Grid.Column="0" Grid.Row="1"
-                       Grid.ColumnSpan="2"
-                       />
-        <StackPanel x:Name="StpMainBarControls"
-            Grid.Column="0" Grid.Row="1" 
-            Grid.ColumnSpan="2" 
-            Orientation="Horizontal"
-            Margin="{Binding ElementName=LblMainBar, Path=Margin}">
-                
                 <Viewbox x:Name="VbTime" 
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Center"
-                            Margin="6,0,0,0">
-                        <TextBlock x:Name="TbTime" 
-                                Margin="1,0,1,0" 
-                                FontFamily="Calibri Light" MouseDown="LblMainBar_OnMouseDown">
-                                    <Run Text="00:00"/>
-                        </TextBlock>
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                Margin="6,0,0,0">
+                    <TextBlock x:Name="TbTime" 
+                                    Margin="1,0,1,0" 
+                                    FontFamily="Calibri Light" MouseDown="LblMainBar_OnMouseDown">
+                                        <Run Text="00:00"/>
+                    </TextBlock>
                 </Viewbox>
 
-        </StackPanel>
+            </StackPanel>
 
-        <Label x:Name="LblClose"
-                            Padding="2" 
-                            MouseDown="Close_OnButtonDown"
-                            Content="close" 
-                            Margin="0,0,4,0"
-                            Grid.Row="0" Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            MinWidth="20" MinHeight="20"
-                            HorizontalAlignment="Right" 
-                            VerticalAlignment="Top"             
-                            HorizontalContentAlignment="Right"
-                            FontFamily="Calibri" FontSize="12" 
-                           />
-        <Label x:Name="LblBlindForDragging"
-            Padding="0"
-            Grid.Row="0" Grid.Column="0"
-            />
-    </Grid>
-
+            <Label x:Name="LblClose"
+                                Padding="2" 
+                                MouseDown="Close_OnButtonDown"
+                                Content="close" 
+                                Margin="0,0,4,0"
+                                Grid.Row="0" Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                MinWidth="20" MinHeight="20"
+                                HorizontalAlignment="Right" 
+                                VerticalAlignment="Top"             
+                                HorizontalContentAlignment="Right"
+                                FontFamily="Calibri" FontSize="12" 
+                               />
+            <Label x:Name="LblBlindForDragging"
+                Padding="0"
+                Grid.Row="0" Grid.Column="0"
+                />
+        </Grid>
+    </Border>
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo />
     </Window.TaskbarItemInfo>

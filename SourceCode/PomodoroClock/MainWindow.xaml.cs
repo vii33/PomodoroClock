@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Shell;
 using System.Windows.Threading;
 using PomodoroClock.Annotations;
@@ -59,16 +60,20 @@ namespace PomodoroClock
         private bool _animationPomodoro;
         private bool _animationBreak;
         private bool _breakTime;
+
         private readonly TimeSpan _timerIntervall = TimeSpan.FromMilliseconds(200);
+        private readonly TimeSpan _pomodoroTimeSpan = TimeSpan.FromMinutes(25);
+        private readonly TimeSpan _breakTimeSpan = TimeSpan.FromMinutes(5);
 
         public MainWindow()
         {
+            InitializeComponent();
+
             this.Top = Properties.Settings.Default.mainTop;  //Better solution: http://stackoverflow.com/questions/937298/restoring-window-size-position-with-multiple-monitors
             this.Left = Properties.Settings.Default.mainLeft;
             this.Height = Properties.Settings.Default.mainHeight;
             this.Width = Properties.Settings.Default.mainWidth;
 
-            InitializeComponent();
             this.DataContext = this;
 
             LblMainBar.MinWidth = CalculateMainBarMinWidth();
@@ -78,8 +83,8 @@ namespace PomodoroClock
 
             //Initialize
             LblMainBar.Width = this.Width - LblMainBar.Margin.Left - LblMainBar.Margin.Right - 20;
-            PomodoroTimeSpan = TimeSpan.FromMinutes(25);
-            BreakTimeSpan = TimeSpan.FromMinutes(5);
+            PomodoroTimeSpan = _pomodoroTimeSpan;
+            BreakTimeSpan = _breakTimeSpan;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -151,6 +156,7 @@ namespace PomodoroClock
 
         private void LblMainBar_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            
             StartTime = DateTime.Now;
             EndTime = DateTime.Now.Add(_breakTime == false ? PomodoroTimeSpan : BreakTimeSpan);  // When we ware not on a break then start a PomodoroTimeSpan, otherwise a BreakTimeSpan
 
@@ -158,6 +164,13 @@ namespace PomodoroClock
             if (AnimationBreak == true)
             {
                 EndTime = DateTime.Now;  // Fast forward
+            }
+
+            // If animation is already running --> Reset animation (because time is also resetted)
+            if (_timer.IsEnabled == true)
+            {
+                AnimationBreak = false;
+                AnimationPomodoro = false;
             }
 
             _timer.Start();
