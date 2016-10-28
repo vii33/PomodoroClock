@@ -1,5 +1,4 @@
-# Website Version:
-https://derveit.github.io/PomodoroClock/
+Website Version:  https://derveit.github.io/PomodoroClock/
 
 
 # PomodoroClock
