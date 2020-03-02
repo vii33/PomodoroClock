@@ -32,7 +32,7 @@ My personal requirements:
 ## Software Installation
 Software needs the [.net Standard Framework 4.5 or later](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
 
-Just download and start the PomodoroTimer.exe.
+Just download and start the PomodoroClock.exe. If Windows brings a Security Warning just click on the small "Execute Anyways" link in the corner -> I think the reason is because I didn't sign the application.
 
 ## Remarks
 The Software doesn’t play a ringing sound after the Pomodoro / Break. This is done on purpose because it annoyed me (and sometimes others).  
