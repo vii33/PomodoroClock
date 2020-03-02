@@ -5,15 +5,15 @@ Website Version:  https://derveit.github.io/PomodoroClock/
 # PomodoroClock
 A lean desktop timer application, which counts 25 minutes intervals. Useful for the "Pomodoro" time management technique.
 
+![](https://images.unsplash.com/photo-1546094096-0df4bcaaa337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)
+
 -----
 
 ## Introduction
-![](https://images.unsplash.com/photo-1546094096-0df4bcaaa337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80)
 
 I really like the [Pomodoro Technique](http://pomodorotechnique.com/). 
 It’s an easy to learn time management method which helps you getting things done (GTD), stay focused and be more productive. 
-
-https://en.wikipedia.org/wiki/Pomodoro_Technique
+See also [https://en.wikipedia.org/wiki/Pomodoro_Technique]
 
 For this method you need a timer which counts 25 minutes of work and 5 minutes of breaks.
 I wanted to use a Pomodoro Timer while doing work on my computer but I didn't find a suitable application, so I wrote one.
