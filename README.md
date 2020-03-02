@@ -8,13 +8,19 @@ A lean desktop timer application, which counts 25 minutes intervals. Useful for 
 -----
 
 ## Introduction
-I really like the Pomodoro Technique (http://pomodorotechnique.com/). 
+I really like the [Pomodoro Technique](http://pomodorotechnique.com/). 
 It’s an easy to learn time management method which helps you getting things done (GTD), stay focused and be more productive. 
 
 https://en.wikipedia.org/wiki/Pomodoro_Technique
 
 For this method you need a timer which counts 25 minutes of work and 5 minutes of breaks.
-I want to use a Pomodoro Timer while doing work on my computer. And I'm also kind of a Power User who tweaks every software to achieve a maximum work-flow output. 
+I wanted to use a Pomodoro Timer while doing work on my computer but I didn't find a suitable application, so I wrote one.
+
+## Software Requirements
+. https://dotnet.microsoft.com/download/dotnet-framework
+
+
+. And I'm also kind of a Power User who tweaks every software to achieve a maximum work-flow output. 
 Therefore I had some requirements for a Timer Software:
 
 ## Personal Timer Requirements
