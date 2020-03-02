@@ -17,22 +17,21 @@ See also [wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique).
 
 I wanted to use a Pomodoro Timer while doing work on my computer but I didn't find a suitable application, so I wrote one.
 
-I had some personal requirements:
+My personal requirements:
 * I manage my tasks via good old fashioned pen & paper -> So I just need a simple timer application, to task managemend bloat ware.
 * The timer needs to stay in my sight on the screen at all times. So I get into the Eustress Phase (Positive Stressor) and be highly productive. -> No web app, need a native desktop application.
 
 
 ## Software-Features
-* One Click Start. After 25 minutes have passed, another click starts the break. 
+* One Click start of the timer. After 25 minutes have passed, another click starts the break. 
 * App is highly (geometric) scalable and can be “parked” in free areas anywhere on the screen.
 * Visual Feedback with color changing time bar
 * Stays always on top of other applications
-* Remembers window position and size upon next start.
-* Also shows progression in task bar
-* Built with .Net 4.5
+* Remembers window position and size upon next start (most other application don't do that - found this quite annoying).
+
 
 ## Software Installation
-Software needs the [.net Standard Framework](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
+Software needs the [.net Standard Framework 4.5 or later](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
 
 Just download and start the PomodoroTimer.exe.
 
