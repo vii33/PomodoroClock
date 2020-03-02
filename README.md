@@ -13,28 +13,14 @@ A lean desktop timer application, which counts 25 minutes intervals. Useful for 
 
 I really like the [Pomodoro Technique](http://pomodorotechnique.com/). 
 It’s an easy to learn time management method which helps you getting things done (GTD), stay focused and be more productive. 
-See also [https://en.wikipedia.org/wiki/Pomodoro_Technique]
+See also [wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique).
 
-For this method you need a timer which counts 25 minutes of work and 5 minutes of breaks.
 I wanted to use a Pomodoro Timer while doing work on my computer but I didn't find a suitable application, so I wrote one.
 
-## Software Requirements
-. https://dotnet.microsoft.com/download/dotnet-framework
+I had some personal requirements:
+* I manage my tasks via good old fashioned pen & paper -> So I just need a simple timer application, to task managemend bloat ware.
+* The timer needs to stay in my sight on the screen at all times. So I get into the Eustress Phase (Positive Stressor) and be highly productive. -> No web app, need a native desktop application.
 
-
-. And I'm also kind of a Power User who tweaks every software to achieve a maximum work-flow output. 
-Therefore I had some requirements for a Timer Software:
-
-## Personal Timer Requirements
-* Since I’m managing my Pomodoros via good old fashioned pen & paper, I don’t want to be urged to specify tasks in the timer application. I just want to start and stop it.
-* I want to have a clear visual feedback of how much time I have still left. So in addition to a digital clock a more visual way (e.g. color) would be nice.
-* The timer needs always to stay in my sight. Otherwise I wouldn’t get into the Eustress (Positive Stressor) phase as good. Therefore it has to stay on top of other applications.
-* Since the timer always stays on top, it has to be small in it’s dimensions, moveable and scaleable.
-* It has to run on a Windows PC, preferably without installing strange frameworks. 
-
-## Result 
-I searched on the internet for some while and tried different desktop and web-based timers, but I didn’t find anything which suited my requirements. 
-And so I wrote a simple C# application. I make this project public, perhaps the software can help some with similar problems. 
 
 ## Software-Features
 * One Click Start. After 25 minutes have passed, another click starts the break. 
@@ -45,10 +31,15 @@ And so I wrote a simple C# application. I make this project public, perhaps the 
 * Also shows progression in task bar
 * Built with .Net 4.5
 
-## Remarks
-Software doesn’t play a ringing sound after the Pomodoro / Break. Perhaps I'll add this feature later.  
+## Software Installation
+Software needs the [.net Standard Framework](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
 
-*If the software helps you or you have some questions, feel free to contact me.*
+Just download and start the PomodoroTimer.exe.
+
+## Remarks
+The Software doesn’t play a ringing sound after the Pomodoro / Break. This is done on purpose because it annoyed me (and sometimes others).  
+
+*If the software helps you or you have some questions, I love to hear your feedback*
 
 ## Acknowledgement
 Tomato Icon made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
