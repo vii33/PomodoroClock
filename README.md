@@ -1,7 +1,3 @@
-Website Version:  https://derveit.github.io/PomodoroClock/
-
------
-
 # PomodoroClock
 A lean desktop timer application, which counts 25 minutes intervals. Useful for the "Pomodoro" time management technique.
 
