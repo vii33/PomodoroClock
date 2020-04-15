@@ -44,12 +44,13 @@ Example Usage (you can scale it to you liking):
 ## Software Installation
 Software needs the [.net Standard Framework 4.5 or later](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
 
-Just download and start the PomodoroClock.exe. If Windows brings a Security Warning just click on the small "Execute Anyways" link in the corner -> I think the reason is because I didn't sign the application.
+Just download and start the PomodoroClock.exe or compile by yourself. 
+If Windows brings a Security Warning with the exe, then click on the small link "Further Information" and "Execute anyways" -> Reason is that I didn't sign the application.
 
 ## Remarks
 The Software doesn’t play a ringing sound after the Pomodoro / Break. This is done on purpose because it annoyed me (and sometimes others).  
 
-*If the software helps you or you have some questions, I love to hear your feedback*
+*If the software helps you or you have some remarks, I'd love to hear your feedback*
 
 ## Acknowledgement
 Tomato Icon made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
