@@ -28,12 +28,9 @@ My personal requirements:
 Countdown:
 
 ![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20265%20PomodoroTimer.png)
-
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20266%20PomodoroTimer.png)
 ![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20268%20PomodoroTimer.png)
-
 ![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20271%20PomodoroTimer.png)
-
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20272%20PomodoroTimer.png)
 
 Pause (count back up):
 
