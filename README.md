@@ -25,9 +25,24 @@ My personal requirements:
 * Stays always on top of other applications
 * Remembers window position and size upon next start (most other application don't do that - found this quite annoying).
 
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20131%20PomodoroTimer.png)
+Countdown:
 
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20132%20PomodoroTimer.png)
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20265%20PomodoroTimer.png)
+
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20268%20PomodoroTimer.png)
+
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20271%20PomodoroTimer.png)
+
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20272%20PomodoroTimer.png)
+
+Pause (count back up):
+
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20273%20PomodoroTimer.png)
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20274%20PomodoroTimer.png)
+
+Example Usage (you can scale it to you liking):
+
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20277%20PomodoroTimer.png)
 
 ## Software Installation
 Software needs the [.net Standard Framework 4.5 or later](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
