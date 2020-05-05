@@ -9,13 +9,13 @@ A lean desktop timer application, which counts 25 minutes intervals. Useful for 
 
 I really like the [Pomodoro Technique](http://pomodorotechnique.com/). 
 It’s an easy to learn time management method which helps you getting things done (GTD), stay focused and be more productive. 
-See also [wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique).
+See [wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique) or many YouTube videos.
 
 I wanted to use a Pomodoro Timer while doing work on my computer but I didn't find a suitable application, so I wrote one.
 
 My personal requirements:
 * I just need a simple timer application, no task management bloat ware. (My task management is done via pen & paper)
-* To stay highly productive, the timer needs to be in sight on the screen at all times ("OMG, only 4 minutes left") -> A seperate browser window doesn't do the job, it has to be a native desktop application.
+* To stay highly productive, the timer needs to be in sight at all times ("OMG, only 4 minutes left") -> A seperate browser window doesn't do the job, it has to be a desktop application. 
 
 
 ## Software-Features
@@ -23,18 +23,12 @@ My personal requirements:
 * App is highly (geometric) scalable and can be “parked” in free areas on the screen. Anywhere you need it.
 * Easy to recognize visual Feedback via a color changing time bar.
 * Remembers window position and size upon next start (most other application don't do that - found this quite annoying).
+* Pomodors cannot be paused. That's not a bug, it's the underlying technique.
+* After 25 minutes you can start your 5 minute pause. Reason is that you often work a few seconds more than excat 25:00 minutes. 
 
-Countdown:
+Animation:
 
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20265%20PomodoroTimer.png)
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20266%20PomodoroTimer.png)
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20268%20PomodoroTimer.png)
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20271%20PomodoroTimer.png)
-
-Pause (count back up):
-
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20273%20PomodoroTimer.png)
-![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20274%20PomodoroTimer.png)
+![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/timer.gif)
 
 Example Usage (you can scale it to you liking):
 
@@ -43,7 +37,7 @@ Example Usage (you can scale it to you liking):
 ## Software Installation
 Software needs the [.net Standard Framework 4.5 or later](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
 
-Just download and start the PomodoroClock.exe or compile by yourself. 
+Just download and start the PomodoroClock.exe or compile it by yourself. 
 If Windows brings a Security Warning with the exe, then click on the small link "Further Information" and "Execute anyways" -> Reason is that I didn't sign the application.
 
 ## Remarks
