@@ -15,8 +15,8 @@ I wanted to use a Pomodoro Timer while doing work on my computer but I didn't fi
 
 My personal requirements:
 * I just need a simple timer application, no task management bloat ware. (My task management is done via pen & paper)
-* To stay highly productive, the timer needs to be in sight at all times ("OMG, only 4 minutes left") -> A seperate browser window doesn't do the job, it has to be a desktop application. 
-
+* To stay highly productive, the timer needs to be in sight at all times ("OMG, only 4 minutes left", positive stress also called "Eustress") -> A seperate browser window doesn't do the job, it has to be a desktop application. 
+* I didn't not want to use a phone timer. 1st reason is that I don't want to be distracted by incoming phone messages and 2nd reason that I don't want to be disturbed by the "ringing" sound.
 
 ## Software-Features
 * One click start of the timer. After 25 minutes have passed, another click starts the break. Focus on the task, not the timer software.  
@@ -33,6 +33,10 @@ Animation:
 Example Usage (you can scale it to you liking):
 
 ![](https://github.com/derveit/PomodoroClock/blob/master/Screenshots/ScreenShot%20277%20PomodoroTimer.png)
+
+Short usage video on YouTube:
+
+[![Apps usage on YouTube](https://i9.ytimg.com/vi/97yd5kR_zNo/mqdefault.jpg?time=1588841874312&sqp=COSZz_UF&rs=AOn4CLAitcgbdLSNISVnEP2K3ZSh8m5cDg)](https://youtu.be/97yd5kR_zNo "App usage on YouTube")
 
 ## Software Installation
 Software needs the [.net Standard Framework 4.5 or later](https://dotnet.microsoft.com/download/dotnet-framework). Most Windows PCs have this installed by default.
